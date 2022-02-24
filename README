@@ -1,0 +1,13 @@
+Pre-assignment submission
+
+Simulation of a REST API endpoint which uses test data from testData.json for serving requests.
+This runs with an Express JS in port 3003.
+
+How to run:
+
+1. clone repo
+2. install with "npm install"
+3. run with "npm run start"
+4. make requests (e.g. with Postman or web-browser) to http://localhost:3003/api/v1/bookings
+
+

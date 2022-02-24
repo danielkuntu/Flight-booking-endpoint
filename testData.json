@@ -1,0 +1,86 @@
+{
+    "bookings":[
+        {
+            "id": 22,
+            "passengerId": 51,
+            "flightId": "AY5"
+        },
+        {
+            "id": 81,
+            "passengerId": 87,
+            "flightId": "AY86"
+        },
+        {
+            "id": 17,
+            "passengerId": 57,
+            "flightId": "AY100"
+        },
+        {
+            "id": 5,
+            "passengerId": 43,
+            "flightId": "AY2"
+        }
+    ],
+    "passengers":[
+        {
+            "id": 51,
+            "firstName": "Aigneis",
+            "lastName": "Korey",
+            "email": "Aigneis.Korey@gmail.com"
+        },
+        {
+            "id": 87,
+            "firstName": "Teddie",
+            "lastName": "Loleta",
+            "email": "Teddie.Loleta@gmail.com"
+        },
+        {
+            "id": 57,
+            "firstName": "Arabel",
+            "lastName": "Pascia",
+            "email": "Arabel.Pascia@gmail.com"
+        },
+        {
+            "id": 43,
+            "firstName": "Olwen",
+            "lastName": "Sikorski",
+            "email": "Olwen.Sikorski@gmail.com"
+        },
+        {
+            "id": 95,
+            "firstName": "Tabbatha",
+            "lastName": "Suk",
+            "email": "Tabbatha.Suk@gmail.com"
+        }
+    ],
+    "flights":[
+        {
+            "id": "AY5",
+            "departure": "HEL",
+            "arrival": "JFK",
+            "departureDate": "01.05.2022",
+            "arrivalDate": "01.05.2022"
+        },
+        {
+            "id": "AY86",
+            "departure": "PEK",
+            "arrival": "HEL",
+            "departureDate": "21.02.2022",
+            "arrivalDate": "21.02.2022"
+        },
+        {
+            "id": "AY100",
+            "departure": "HEL",
+            "arrival": "HKG",
+            "departureDate": "16.01.2022",
+            "arrivalDate": "17.01.2022"
+        },
+        {
+            "id": "AY2",
+            "departure": "HEL",
+            "arrival": "LAX",
+            "departureDate": "01.03.2022",
+            "arrivalDate": "02.03.2022"
+        }
+    ]
+}
