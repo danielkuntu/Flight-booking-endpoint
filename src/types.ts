@@ -1,6 +1,7 @@
 export type Airport = 'HEL' | 'JFK' | 'HKG' | 'LAX';
 
 export type Flight = {
+    id: string,
     departure: Airport;
     arrival: Airport;
     departureDate: string;
