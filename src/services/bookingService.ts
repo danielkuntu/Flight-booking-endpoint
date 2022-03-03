@@ -1,46 +1,28 @@
-import bookingData from '../../testData.json';
-import { Booking, Bookings, Passenger } from '../types';
+import testData from '../../testData.json';
 
-const bookings: Array<Booking> = bookingData.bookings;
+import { Booking, Bookings } from '../models/types';
+import { deduceBookingData } from '../helpers/helpers';
+import { ensure } from '../utils/utils';
 
-export function getBookingById(id: number): Booking | null {
-    const booking: Booking = ensure(bookings.find(booking => booking.id === id));
-    if(booking !== null || booking !== undefined){
-        return booking;
-    } else {
-        return null;
-    }
-};
+const bookingData = testData;
+const bookings: Array<Booking> = testData.bookings;
 
-export function getBookings(): Bookings | any {
-   let id: number | undefined;
-   let passengerId: number;
-   let flightId: string;
-   const allBookings: Bookings[] = [];
+export function getBookingById(id: number): Bookings[] | null {
+  try {
+    const bookingById: Bookings[] = ensure(deduceBookingData(bookingData, bookings, id));
+    return bookingById;
+  } catch (TypeError) {
+    console.log(`Booking id: ${id} not found.`);
+    return null;
+  }
+}
 
-   for (let booking of bookings) {
-        id = booking.id;
-        passengerId = booking.passengerId;
-        flightId = booking.flightId;
-        const pax: Passenger = ensure(bookingData.passengers.find(pax => pax.id === passengerId));
-        const paxFormatted = (({firstName, lastName, email}) => ({ firstName, lastName, email}))(pax);
-        const flights: any[] = bookingData.flights.filter(el => el.id === flightId)
-            .map(flight => (({departure, arrival, departureDate, arrivalDate}) =>
-            ({departure, arrival, departureDate, arrivalDate}))(flight));
-        
-        const formattedBooking: Bookings = {
-            id: id,
-            passenger: paxFormatted,
-            flights: flights,
-        }
-        allBookings.push(formattedBooking);
-   }
+export function getBookings(): Bookings[] | null {
+  try {
+    const allBookings: Bookings[] = ensure(deduceBookingData(bookingData, bookings));
     return allBookings;
-};
-
-function ensure<T>(argument: T | undefined |null, message: string = 'Not found.'): T {
-    if (argument === undefined || argument === null) {
-        throw new TypeError(message);
-    }
-    return argument;
+  } catch (TypeError) {
+    console.log('Bookings were not found!');
+    return null;
+  }
 }

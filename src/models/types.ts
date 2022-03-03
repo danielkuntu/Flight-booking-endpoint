@@ -24,6 +24,5 @@ export type Booking = {
 export type Bookings = {
     id?: number,
     passenger: Passenger,
-    flights: Flight[]
+    flights: Flight[],
 }
-
