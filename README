@@ -1,5 +1,3 @@
-Pre-assignment submission
-
 Simulation of a REST API endpoint which uses test data from testData.json for serving requests.
 This runs with an Express JS in port 3003.
 
